@@ -7,14 +7,14 @@ class ClienteSerializer(serializers.ModelSerializer):
         fields = ['id', 'nombre', 'apellido', 'email', 'telefono', 'direccion']
 
 class ReservaSerializer(serializers.ModelSerializer):
-    cliente = ClienteSerializer(read_only=True)
+    cliente = serializers.PrimaryKeyRelatedField(queryset=Cliente.objects.all())
 
     class Meta:
         model = Reserva
         fields = ['id', 'cliente', 'fecha_reserva', 'fecha_llegada', 'fecha_salida', 'estado']
 
 class HistorialSerializer(serializers.ModelSerializer):
-    cliente = ClienteSerializer(read_only=True)
+    cliente = serializers.PrimaryKeyRelatedField(queryset=Cliente.objects.all())
 
     class Meta:
         model = Historial
