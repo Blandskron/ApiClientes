@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'clientes',
     'profesional',
     'reserva',
+    'docs',
 ]
 
 MIDDLEWARE = [
