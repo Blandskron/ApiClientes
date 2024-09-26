@@ -23,6 +23,7 @@ urlpatterns = [
     path('api/clientes/', include('clientes.urls')),
     path('api/profesionales/', include('profesional.urls')),
     path('api/reservas-citas/', include('reserva.urls')),
+    path('', include('docs.urls')),
     #path('api-auth/', include('rest_framework.urls')),
     #path('api-token-auth/', obtain_auth_token, name='api_token_auth'),
 ]
